@@ -1,0 +1,6 @@
+dotenv==0.9.9
+pandas==2.3.3
+plotly==6.5.0
+requests==2.32.5
+streamlit==1.52.2
+streamlit-aggrid==1.2.1.post2
