@@ -13,7 +13,8 @@ class MovieRepository:
         self.__base_url = os.getenv('API_URL')
         self.__movies_url = f'{self.__base_url}movies/'
         self.__headers = {
-            'Authorization': f'Bearer {st.session_state.token}'
+            'Authorization': f'Bearer {st.session_state.token}',
+            'Content-Type': 'application/json'
         }
 
     def get_movies(self):
@@ -32,14 +33,16 @@ class MovieRepository:
         response = requests.post(
             self.__movies_url,
             headers=self.__headers,
-            data=movie,
+            json=movie,
         )
         if response.status_code == 201:  # 201 -> Criado com sucesso
             return response.json()
         if response.status_code == 401:
             logout()
             return None
-        raise Exception(f'Erro ao obter dados da API. Status code: {response.status_code}')
+        raise Exception(
+            f'Erro ao obter dados da API. Status code: {response.status_code}. Body: {response.text}'
+        )
 
     def get_movie_stats(self):
         response = requests.get(

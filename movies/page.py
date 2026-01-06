@@ -61,13 +61,16 @@ def show_movies():
     resume = st.text_area('Resumo do Filme')
 
     if st.button('Cadastrar'):
-        new_movie = movie_service.create_movie(
-            title=title,
-            release_date=release_date,
-            genre=genre_names[selected_genre_name],
-            actors=selected_actors_ids,
-            resume=resume,
-        )
+        if not selected_actors_ids:
+            st.error('Selecione ao menos um ator/atriz antes de cadastrar o filme.')
+        else:
+            new_movie = movie_service.create_movie(
+                title=title,
+                release_date=release_date,
+                genre=genre_names[selected_genre_name],
+                actors=selected_actors_ids,
+                resume=resume,
+            )
         if new_movie:
             st.rerun()
         else:

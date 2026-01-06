@@ -34,6 +34,6 @@ streamlit run app.py
 **Imagens**
 - Exemplos da interface:
 
-![Gêneros](pictures/genres.png)
+![Gêneros](pictures/stats.png)
 
-![Estatísticas](pictures/stats.png)
+![Estatísticas](pictures/genres.png)
