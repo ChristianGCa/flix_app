@@ -1,6 +1,6 @@
 # Flix App
 
-Aplicação Streamlit para gerenciar filmes, gêneros, atores e avaliações.
+Aplicação Streamlit para gerenciar filmes, gêneros, atores e avaliações. Projeto desenvolvido com o auxílio do curso Django Master, da PyCodeBR.
 
 **Descrição**
 - Interface em Streamlit que consome uma API externa para armazenar e recuperar dados de filmes.
