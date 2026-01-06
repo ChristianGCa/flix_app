@@ -20,7 +20,12 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-3. Execute a aplicação:
+3. Coloque a URL da API no .env
+```bash
+API_URL='url-da-api'
+```
+
+4. Execute a aplicação:
 
 ```bash
 streamlit run app.py
